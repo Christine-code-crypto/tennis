@@ -31,3 +31,23 @@ def testing(request):
     }
     return HttpResponse(template.render(context,request))
 
+def testing1(request):
+    template =loader.get_template('template1.html')
+    context={
+        'firstname' :'Christina',
+    }
+    return HttpResponse(template.render(context,request))
+
+def testing2(request):
+    template =loader.get_template('template2.html')
+    return HttpResponse(template.render())
+
+def testing3(request):
+    mymember=Member.objects.get(id=id)
+    template= loader.get_template('template3.html')
+    context= {
+        'mymember': mymember,
+    }
+    return HttpResponse(template.render(context,request))
+
+
